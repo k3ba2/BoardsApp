@@ -1,4 +1,3 @@
-using BoardsApp.Entities.Configurations;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
