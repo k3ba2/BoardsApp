@@ -4,7 +4,7 @@ namespace BoardsApp.Entities
 {
     public class BoardsAppContext : DbContext
     {
-        public BoardsAppContext(DbContextOptions<DbContext> options) : base(options)
+        public BoardsAppContext(DbContextOptions<BoardsAppContext> options) : base(options)
         {
 
         }
@@ -15,9 +15,13 @@ namespace BoardsApp.Entities
 
         public DbSet<Question> Question { get; set; }   
 
+        public DbSet<QuestionTag> QuestionTags { get; set; }
+
         public DbSet<AnswerLike> Scores { get; set; }    
 
         public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,14 +29,3 @@ namespace BoardsApp.Entities
         }
     }
 }
-
-
-
-
-//question - każde pytanie może mieć komentarze, mogą mieć wiele tagów, wiele odpowiedzi
-//answer - każda odpowiedź może mieć komentarze, każda może mieć punkty
-//comment
-//tag
-//user
-//commentlike
-//questiontag

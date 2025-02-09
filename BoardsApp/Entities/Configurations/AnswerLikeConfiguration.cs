@@ -7,6 +7,8 @@ namespace BoardsApp.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<AnswerLike> builder)
         {
+            builder.HasKey(al => new { al.UserId, al.AnswerId });
+
             builder.HasOne(al => al.Answer)
                 .WithMany(a => a.AnswerLikes)
                 .HasForeignKey(al => al.AnswerId)

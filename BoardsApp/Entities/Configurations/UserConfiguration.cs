@@ -9,7 +9,7 @@ namespace BoardsApp.Entities.Configurations
         {
             builder.HasMany(u => u.AnswerLikes)
                 .WithOne(al => al.User)
-                .HasForeignKey(al => al.User.Id)
+                .HasForeignKey(al => al.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(u => u.Questions)

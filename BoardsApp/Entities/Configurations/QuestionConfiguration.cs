@@ -9,22 +9,22 @@ namespace BoardsApp.Entities.Configurations
         {
             builder.HasOne(q => q.User)
                 .WithMany(u => u.Questions)
-                .HasForeignKey(q => q.User.Id)
+                .HasForeignKey(q => q.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(q => q.Comments)
                 .WithOne(c => c.Question)
-                .HasForeignKey(c => c.Question.Id)
+                .HasForeignKey(c => c.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(q => q.QuestionTags)
                 .WithOne(qt => qt.Question)
-                .HasForeignKey(qt => qt.Question.Id)
+                .HasForeignKey(qt => qt.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(q => q.Answers)
                 .WithOne(a => a.Question)
-                .HasForeignKey(a => a.Question.Id)
+                .HasForeignKey(a => a.QuestionId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
