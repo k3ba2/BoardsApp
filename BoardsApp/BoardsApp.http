@@ -1,6 +1,0 @@
-@BoardsApp_HostAddress = http://localhost:5028
-
-GET {{BoardsApp_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
